@@ -7,6 +7,9 @@ const DEFAULT_COMPANY = "Allrisk, a.s.";
 // Vychozi adresa, kdyz ji uzivatel nema vyplnenou v Entra ID
 const DEFAULT_ADDRESS = { street: "Komárovská 263/20a", postalCode: "617 00", city: "Brno" };
 
+// Fotka pro lidi, kteri nemaji URL v extensionAttribute15
+const DEFAULT_PHOTO = "https://www.allrisk.cz/wp-content/uploads/2024/12/kulicka_fotka_email.png";
+
 const LOGO = { src: "https://www.allrisk.cz/wp-content/uploads/2025/02/logo_allrisk_new_podpis_2025.png", width: 150, alt: "Allrisk" };
 
 const SOCIAL = [
@@ -62,10 +65,8 @@ export function buildSignature(p, email) {
 
   // Levy horni: fotka (odkaz na web)
   h += '<td style="vertical-align:top;padding:0 16px 0 0;width:170px;">';
-  if (p.photo) {
-    h += '<a href="' + WEB + '" style="text-decoration:none;" target="_blank"><img src="' + esc(p.photo) +
-      '" width="170" alt="Fotka" style="border:0;"></a>';
-  }
+  h += '<a href="' + WEB + '" style="text-decoration:none;" target="_blank"><img src="' + esc(p.photo || DEFAULT_PHOTO) +
+    '" width="170" alt="Fotka" style="border:0;"></a>';
   h += "</td>";
 
   // Pravy sloupec pres oba radky: udaje
