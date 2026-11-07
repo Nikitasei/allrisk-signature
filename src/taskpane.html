@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Podpis Allrisk</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <style>
+        body { font-family: "Segoe UI", -apple-system, sans-serif; font-size: 14px; color: #222; margin: 16px; background: #fff; }
+        h1 { font-size: 18px; margin: 0 0 12px; color: #134865; }
+        button { background: #134865; color: #fff; border: 0; border-radius: 4px; padding: 10px 14px; font-size: 14px; cursor: pointer; width: 100%; }
+        button:disabled { opacity: .5; cursor: default; }
+        #status { margin-top: 12px; min-height: 20px; }
+        .ok { color: #107c10; }
+        .err { color: #a4262c; }
+        dl { margin: 16px 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 13px; }
+        dt { color: #666; }
+        dd { margin: 0; word-break: break-all; }
+        .missing { color: #a4262c; }
+    </style>
+</head>
+<body>
+    <h1>Podpis Allrisk</h1>
+    <button id="insert" disabled>Přihlásit a vložit podpis</button>
+    <div id="status"></div>
+    <dl id="details"></dl>
+</body>
+</html>
